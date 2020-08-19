@@ -1,0 +1,17 @@
+version: '3'
+services:
+  php:
+    build: ./containers/php
+    ports:
+      - "8000:8000"
+    environment:
+      - TZ=${TZ}
+    command: "php -S 0.0.0.0:8000 -t public"
+    working_dir: /app
+    volumes:
+      - ./:/app
+
+  composer:
+    image: composer:2.0
+    volumes:
+      - ./:/app

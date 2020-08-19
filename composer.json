@@ -1,0 +1,40 @@
+{
+  "name": "n1215/php8-attributes",
+  "description": "PHP8 Attributes test",
+  "keywords": [
+    "php8",
+    "attributes"
+  ],
+  "type": "project",
+  "homepage": "https://github.com/n1215/php8-attributes",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "n1215",
+      "email": "knakae1215@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*",
+    "nyholm/psr7": "^1.3",
+    "nyholm/psr7-server": "^1.0",
+    "psr/http-factory": "^1.0",
+    "psr/http-server-handler": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "N1215\\Php8Attributes\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "N1215\\Php8Attributes\\": "tests"
+    }
+  },
+  "scripts": {
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
