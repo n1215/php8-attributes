@@ -23,18 +23,20 @@ docker-compose down
 
 ## テスト内容
 
-### Requestからのパラメータ抽出
-ビルトインサーバ
+### Webフレームワーク用
+
 ```
 curl http://localhost:8000/hello?name=Taro
 ```
 
-### アノテーションによるRouting
-未実装
+- HTTPリクエストからのパラメータ抽出 (src/RequestExtractor)
+- HTTPレスポンスへの変換（src/Responder）
+- アノテーションによるルーティング (src/Routing) : 未実装
 
-### テキスト付きEnum
+### コンソール
 
-テストスクリプト実行
 ```
 docker-compose exec php php ./console/enum.php
 ```
+
+- テキスト付きEnum (src/Enum)
