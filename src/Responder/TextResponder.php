@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace N1215\Php8Attributes\Responder;
 
+use Attribute;
 use Nyholm\Psr7\Response;
 
 @@Attribute

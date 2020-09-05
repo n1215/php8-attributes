@@ -31,13 +31,7 @@ function handle(ServerRequestInterface $request, callable $action)
 
     $parameters = array_map(function (ReflectionParameter $refParam) use ($request) {
         $attribute = $refParam->getAttributes()[0];
-        $className = $attribute->getName();
-        $arguments = $attribute->getArguments();
-
-        // エラーになる
-        // $attributeInstance = $attribute->newInstance();
-
-        return (new $className(...$arguments))->extract($request);
+        return $attribute->newInstance()->extract($request);
     }, $reflectionParameters);
 
     $output = $action(...$parameters);
@@ -47,9 +41,7 @@ function handle(ServerRequestInterface $request, callable $action)
         return $reflectionAttribute->getName() === TextResponder::class;
     }))[0];
 
-    $className = $responderAttribute->getName();
-    $arguments = $responderAttribute->getArguments();
-    return (new $className(...$arguments))->respond($output);
+    return $responderAttribute->newInstance()->respond($output);
 }
 
 @@Get('/hello')
