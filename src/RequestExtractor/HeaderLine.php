@@ -7,7 +7,7 @@ namespace N1215\Php8Attributes\RequestExtractor;
 use Attribute;
 use Psr\Http\Message\ServerRequestInterface;
 
-@@Attribute(Attribute::TARGET_PARAMETER)
+#[Attribute(Attribute::TARGET_PARAMETER)]
 class HeaderLine
 {
     public function __construct(private string $key) {}

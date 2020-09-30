@@ -11,12 +11,12 @@ namespace N1215\Php8Attributes\Enum;
  */
 class Fruit extends Enum
 {
-    @@Text('りんご🍎')
+    #[Text('りんご🍎')]
     private const APPLE = 'apple';
 
-    @@Text('みかん🍊')
+    #[Text('みかん🍊')]
     private const ORANGE = 'orange';
 
-    @@Text('もも🍑')
+    #[Text('もも🍑')]
     private const PEACH = 'peach';
 }

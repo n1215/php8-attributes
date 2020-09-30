@@ -7,7 +7,7 @@ namespace N1215\Php8Attributes\Responder;
 use Attribute;
 use Nyholm\Psr7\Response;
 
-@@Attribute
+#[Attribute]
 class TextResponder
 {
     /**

@@ -44,11 +44,11 @@ function handle(ServerRequestInterface $request, callable $action)
     return $responderAttribute->newInstance()->respond($output);
 }
 
-@@Get('/hello')
-@@TextResponder
+#[Get('/hello')]
+#[TextResponder]
 function hello(
-    @@Query('name', '誰か') ?string $name,
-    @@IpAddress ?string $ipAddress
+    #[Query('name', '誰か')] ?string $name,
+    #[IpAddress] ?string $ipAddress
 ): string {
     return "こんにちは、{$name} さん。あなたのIPアドレスは {$ipAddress} です！";
 }
